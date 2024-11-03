@@ -1,0 +1,7 @@
+Tweet Model
+============
+
+.. automodule:: models.tweet
+   :members:
+   :undoc-members:
+   :show-inheritance:

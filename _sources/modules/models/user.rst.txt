@@ -1,0 +1,8 @@
+User Model
+==========
+
+.. automodule:: models.user
+   :members:
+   :undoc-members:
+   :show-inheritance:
+   :special-members: __init__

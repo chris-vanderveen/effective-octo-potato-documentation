@@ -1,8 +1,9 @@
 Main Module
 ===========
 
-.. automodule:: main
+.. automodule:: src.main
    :members:
    :undoc-members:
    :show-inheritance:
    :special-members: __init__
+   :noindex:

@@ -10,9 +10,11 @@ Welcome to Effective-octo-potato's documentation!
    :maxdepth: 2
    :caption: Contents:
 
-   modules/controller
+   modules
    modules/cli
+   modules/controller
    modules/database
+   modules/main
 
 Indices and tables
 ==================

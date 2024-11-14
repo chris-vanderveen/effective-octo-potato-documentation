@@ -258,6 +258,12 @@
 <dt class="sig sig-object py">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">src.cli.</span></span><span class="sig-name descname"><span class="pre">MainMenuOptions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">names=&lt;not</span> <span class="pre">given&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">*values</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">module=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">qualname=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start=1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">boundary=None</span></span></em><span class="sig-paren">)</span></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Enum</span></code></p>
+<p>Main menu options.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>Enum</strong> (<em>Enum</em>) – Options for the main menu</p>
+</dd>
+</dl>
 <dl class="py attribute">
 <dt class="sig sig-object py">
 <span class="sig-name descname"><span class="pre">COMPOSE_TWEET</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'3'</span></em></dt>
@@ -289,6 +295,12 @@
 <dt class="sig sig-object py">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">src.cli.</span></span><span class="sig-name descname"><span class="pre">TweetMenuOptions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">names=&lt;not</span> <span class="pre">given&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">*values</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">module=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">qualname=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start=1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">boundary=None</span></span></em><span class="sig-paren">)</span></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Enum</span></code></p>
+<p>Tweet menu options.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>Enum</strong> (<em>Enum</em>) – Options for the tweet menu</p>
+</dd>
+</dl>
 <dl class="py attribute">
 <dt class="sig sig-object py">
 <span class="sig-name descname"><span class="pre">REPLY</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'2'</span></em></dt>
@@ -315,10 +327,12 @@
 <dt class="sig sig-object py">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">src.cli.</span></span><span class="sig-name descname"><span class="pre">UserInterface</span></span></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>The UserInterface class is responsible for handling user input and output.</p>
 <dl class="py method">
 <dt class="sig sig-object py">
 <span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span></dt>
-<dd></dd></dl>
+<dd><p>Initializes the UserInterface class.</p>
+</dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py">
@@ -416,8 +430,10 @@ if length of list is &gt; amt, show first amt of tweets in tid_list and give opt
 <dt class="field-even">Type<span class="colon">:</span></dt>
 <dd class="field-even"><p>list[int]</p>
 </dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
 </dl>
-<p>:return None</p>
 </dd></dl>
 
 <dl class="py method">
@@ -496,8 +512,10 @@ Go back to user_options</p>
 <li><p><strong>other_user_id</strong> (<em>int</em>) – the user ID of the user that the options are for</p></li>
 </ul>
 </dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
 </dl>
-<p>return: None</p>
 </dd></dl>
 
 </dd></dl>
@@ -506,6 +524,12 @@ Go back to user_options</p>
 <dt class="sig sig-object py">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">src.cli.</span></span><span class="sig-name descname"><span class="pre">UserMenuOptions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">names=&lt;not</span> <span class="pre">given&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">*values</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">module=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">qualname=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start=1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">boundary=None</span></span></em><span class="sig-paren">)</span></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Enum</span></code></p>
+<p>User menu options.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>Enum</strong> (<em>Enum</em>) – Options for the user menu</p>
+</dd>
+</dl>
 <dl class="py attribute">
 <dt class="sig sig-object py">
 <span class="sig-name descname"><span class="pre">FOLLOW</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'2'</span></em></dt>

@@ -1,0 +1,8 @@
+Command Line Interface
+======================
+
+.. automodule:: cli
+   :members:
+   :undoc-members:
+   :show-inheritance:
+   :special-members: __init__

@@ -1,0 +1,22 @@
+.. Effective-octo-potato documentation master file, created by
+   sphinx-quickstart on Sun Nov  3 11:46:33 2024.
+   You can adapt this file completely to your liking, but it should at least
+   contain the root `toctree` directive.
+
+Welcome to Effective-octo-potato's documentation!
+=================================================
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Contents:
+
+   modules/controller
+   modules/cli
+   modules/database
+
+Indices and tables
+==================
+
+* :ref:`genindex`
+* :ref:`modindex`
+* :ref:`search`

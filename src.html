@@ -262,8 +262,11 @@
 <li class="toctree-l2"><a class="reference internal" href="src.tests.html#submodules">Submodules</a></li>
 <li class="toctree-l2"><a class="reference internal" href="src.tests.html#module-src.tests.test_controller">src.tests.test_controller module</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="src.tests.html#src.tests.test_controller.TestController"><code class="docutils literal notranslate"><span class="pre">TestController</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="src.tests.html#src.tests.test_controller.TestController.test_compose_tweet"><code class="docutils literal notranslate"><span class="pre">TestController.test_compose_tweet()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="src.tests.html#src.tests.test_controller.TestController.test_display_tweet"><code class="docutils literal notranslate"><span class="pre">TestController.test_display_tweet()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="src.tests.html#src.tests.test_controller.TestController.test_find_hashtags"><code class="docutils literal notranslate"><span class="pre">TestController.test_find_hashtags()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="src.tests.html#src.tests.test_controller.TestController.test_get_tweet_stats"><code class="docutils literal notranslate"><span class="pre">TestController.test_get_tweet_stats()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="src.tests.html#src.tests.test_controller.TestController.test_replyto_tweet"><code class="docutils literal notranslate"><span class="pre">TestController.test_replyto_tweet()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="src.tests.html#src.tests.test_controller.TestController.test_search_tweet"><code class="docutils literal notranslate"><span class="pre">TestController.test_search_tweet()</span></code></a></li>
 </ul>
 </li>
@@ -620,9 +623,27 @@ Go back to user_options</p>
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="src.controller.Controller.display_user_stats">
+<span class="sig-name descname"><span class="pre">display_user_stats</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">usr_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#src.controller.Controller.display_user_stats" title="Link to this definition">¶</a></dt>
+<dd><p>Gets the number of followers and followees for a user.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>usr_id</strong> (<em>int</em>) – id of the user to get stats for</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>tuple of number of followers and followees</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>(int, int)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="src.controller.Controller.find_hashtags">
-<span class="sig-name descname"><span class="pre">find_hashtags</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">search_terms</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#src.controller.Controller.find_hashtags" title="Link to this definition">¶</a></dt>
-<dd><p>Finds unique hashtags in the search terms.</p>
+<span class="sig-name descname"><span class="pre">find_hashtags</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">search_term</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">bool</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#src.controller.Controller.find_hashtags" title="Link to this definition">¶</a></dt>
+<dd><p>Finds unique hashtags in the search terms. Returns True if there are
+duplicate hashtags.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>search_terms</strong> – list of search terms</p>
@@ -682,23 +703,6 @@ Go back to user_options</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="src.controller.Controller.get_followers">
-<span class="sig-name descname"><span class="pre">get_followers</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">usr_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#src.controller.Controller.get_followers" title="Link to this definition">¶</a></dt>
-<dd><p>Gets the followers of a user.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>usr_id</strong> (<em>int</em>) – id of the user to get followers for</p>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>list of user ids</p>
-</dd>
-<dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>list[int]</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
 <dt class="sig sig-object py" id="src.controller.Controller.get_tweet_stats">
 <span class="sig-name descname"><span class="pre">get_tweet_stats</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tid</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#src.controller.Controller.get_tweet_stats" title="Link to this definition">¶</a></dt>
 <dd><p>Displays the number of retweets and replies for a tweet.</p>
@@ -727,23 +731,6 @@ Go back to user_options</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="src.controller.Controller.get_user_stats">
-<span class="sig-name descname"><span class="pre">get_user_stats</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">usr_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#src.controller.Controller.get_user_stats" title="Link to this definition">¶</a></dt>
-<dd><p>Gets the number of followers and followees for a user.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>usr_id</strong> (<em>int</em>) – id of the user to get stats for</p>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>tuple of number of followers and followees</p>
-</dd>
-<dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>(int, int)</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
 <dt class="sig sig-object py" id="src.controller.Controller.get_user_tweets">
 <span class="sig-name descname"><span class="pre">get_user_tweets</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">usr_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#src.controller.Controller.get_user_tweets" title="Link to this definition">¶</a></dt>
 <dd><p>Gets the tweets of a user.</p>
@@ -753,6 +740,23 @@ Go back to user_options</p>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>list of tweet ids</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list[int]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="src.controller.Controller.list_followers">
+<span class="sig-name descname"><span class="pre">list_followers</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">usr_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#src.controller.Controller.list_followers" title="Link to this definition">¶</a></dt>
+<dd><p>Gets the followers of a user.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>usr_id</strong> (<em>int</em>) – id of the user to get followers for</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>list of user ids</p>
 </dd>
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>list[int]</p>
@@ -810,7 +814,7 @@ Go back to user_options</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="src.controller.Controller.replyto_tweet">
-<span class="sig-name descname"><span class="pre">replyto_tweet</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">usr_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">content</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reply_to_tid</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#src.controller.Controller.replyto_tweet" title="Link to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">replyto_tweet</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">usr_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">content</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reply_to_tid</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#src.controller.Controller.replyto_tweet" title="Link to this definition">¶</a></dt>
 <dd><p>Reply to a tweet.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -825,7 +829,7 @@ Go back to user_options</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="src.controller.Controller.retweet">
-<span class="sig-name descname"><span class="pre">retweet</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">usr_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tid</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_spam</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#src.controller.Controller.retweet" title="Link to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">retweet</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tid</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">usr_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_spam</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#src.controller.Controller.retweet" title="Link to this definition">¶</a></dt>
 <dd><p>Retweet a tweet.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -872,6 +876,26 @@ Go back to user_options</p>
 </dl>
 </dd></dl>
 
+<dl class="py method">
+<dt class="sig sig-object py" id="src.controller.Controller.unfollow_user">
+<span class="sig-name descname"><span class="pre">unfollow_user</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">usr_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">followee_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#src.controller.Controller.unfollow_user" title="Link to this definition">¶</a></dt>
+<dd><p>Unfollows a user.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>usr_id</strong> (<em>int</em>) – id of the user following</p></li>
+<li><p><strong>followee_id</strong> (<em>int</em>) – id of the user being followed</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
 </dd></dl>
 
 </section>
@@ -906,22 +930,68 @@ Go back to user_options</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="src.database.DatabaseManager.follow_user">
 <span class="sig-name descname"><span class="pre">follow_user</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">users_usr_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">other_usr_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#src.database.DatabaseManager.follow_user" title="Link to this definition">¶</a></dt>
-<dd><p>Follows a user.</p>
+<dd><p>adds a follow relation to the db.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>users_usr_id</strong> (<em>int</em>) – id of the user following the other user (follower)</p></li>
+<li><p><strong>other_usr_id</strong> (<em>int</em>) – id of the user being followed (followee)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>true or false based on if the addition was successful</p>
+</dd>
+</dl>
+<p>:rtype:bool</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="src.database.DatabaseManager.get_followees">
+<span class="sig-name descname"><span class="pre">get_followees</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">usr_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#src.database.DatabaseManager.get_followees" title="Link to this definition">¶</a></dt>
+<dd><p>Gets the followees of a user.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>usr_id</strong> (<em>int</em>) – id of the user to get followees for</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>list of user ids</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list[int]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="src.database.DatabaseManager.get_followers">
+<span class="sig-name descname"><span class="pre">get_followers</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">usr_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#src.database.DatabaseManager.get_followers" title="Link to this definition">¶</a></dt>
+<dd><p>Gets the followees of a user.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>usr_id</strong> (<em>int</em>) – id of the user to get followers for</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>list of user ids</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list[int]</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="src.database.DatabaseManager.get_retweets">
 <span class="sig-name descname"><span class="pre">get_retweets</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tid</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#src.database.DatabaseManager.get_retweets" title="Link to this definition">¶</a></dt>
-<dd><p>Gets all retweets of a tweet.</p>
+<dd><p>Gets the retweets of a tweet.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>tid</strong> (<em>int</em>) – id of the tweet to get retweets for</p>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>list of tuples of retweet info</p>
+<dd class="field-even"><p>list of user ids</p>
 </dd>
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>list[tuple[int, int, int, int, str]]</p>
+<dd class="field-odd"><p>list[int]</p>
 </dd>
 </dl>
 </dd></dl>
@@ -946,16 +1016,16 @@ Go back to user_options</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="src.database.DatabaseManager.get_tweet_replies">
 <span class="sig-name descname"><span class="pre">get_tweet_replies</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tid</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#src.database.DatabaseManager.get_tweet_replies" title="Link to this definition">¶</a></dt>
-<dd><p>Gets all replies to a tweet.</p>
+<dd><p>Gets the replies to a tweet.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>tid</strong> (<em>int</em>) – id of the tweet to get replies for</p>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>list of tuples of reply info</p>
+<dd class="field-even"><p>list of tweet info</p>
 </dd>
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>list[tuple[int, int, str, str, str, int]]</p>
+<dd class="field-odd"><p>list[int, int, str, str, str, int]</p>
 </dd>
 </dl>
 </dd></dl>
@@ -995,18 +1065,18 @@ Go back to user_options</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="src.database.DatabaseManager.get_tweets_by_user">
-<span class="sig-name descname"><span class="pre">get_tweets_by_user</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">user_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#src.database.DatabaseManager.get_tweets_by_user" title="Link to this definition">¶</a></dt>
-<dd><p>Utility method to get all Tweets by a User from the db.</p>
+<dt class="sig sig-object py" id="src.database.DatabaseManager.get_user">
+<span class="sig-name descname"><span class="pre">get_user</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">keyword</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">tuple</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#src.database.DatabaseManager.get_user" title="Link to this definition">¶</a></dt>
+<dd><p>Helper function for search_users() that gets users from the db that match a single keyword.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>user_id</strong> (<em>int</em>) – id of User to get Tweets for</p>
+<dd class="field-odd"><p><strong>keyword</strong> (<em>str</em>) – string to match with Users in db</p>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>a list of tids</p>
+<dd class="field-even"><p>list of user ids</p>
 </dd>
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>list</p>
+<dd class="field-odd"><p>list[tuples(int)]</p>
 </dd>
 </dl>
 </dd></dl>
@@ -1030,14 +1100,14 @@ Go back to user_options</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="src.database.DatabaseManager.post_retweet">
-<span class="sig-name descname"><span class="pre">post_retweet</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">usr_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tid</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">spam_flag</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#src.database.DatabaseManager.post_retweet" title="Link to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">post_retweet</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tid</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">usr_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_spam</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#src.database.DatabaseManager.post_retweet" title="Link to this definition">¶</a></dt>
 <dd><p>Posts a retweet to the db.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>usr_id</strong> (<em>int</em>) – id of the user retweeting</p></li>
 <li><p><strong>tid</strong> (<em>int</em>) – id of the tweet being retweeted</p></li>
-<li><p><strong>spam_flag</strong> (<em>bool</em>) – whether the retweet is marked as spam</p></li>
+<li><p><strong>is_spam</strong> (<em>bool</em>) – whether the retweet is spam</p></li>
 </ul>
 </dd>
 </dl>
@@ -1071,7 +1141,7 @@ Go back to user_options</p>
 <dd><p>Registers a user in the database.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>user</strong> (<em>tuple</em>) – Tuple containing user information (name, email, phone, pwd)</p>
+<dd class="field-odd"><p><strong>user</strong> (<em>tuple</em>) – Tuple containing user information (usr, name, email, phone, pwd)</p>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>id of the user</p>
@@ -1092,6 +1162,47 @@ Go back to user_options</p>
 </dd>
 </dl>
 </dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="src.database.DatabaseManager.remove_user">
+<span class="sig-name descname"><span class="pre">remove_user</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">usr_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#src.database.DatabaseManager.remove_user" title="Link to this definition">¶</a></dt>
+<dd><p>Removes a user from the database.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>usr_id</strong> (<em>int</em>) – id of the user to remove</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="src.database.DatabaseManager.tweet_count">
+<span class="sig-name descname"><span class="pre">tweet_count</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#src.database.DatabaseManager.tweet_count" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="src.database.DatabaseManager.unfollow_user">
+<span class="sig-name descname"><span class="pre">unfollow_user</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">users_usr_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">other_usr_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#src.database.DatabaseManager.unfollow_user" title="Link to this definition">¶</a></dt>
+<dd><p>removes a follow relation from the db.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>users_usr_id</strong> (<em>int</em>) – id of the follower</p></li>
+<li><p><strong>other_usr_id</strong> (<em>int</em>) – id of the followee</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>true or false based on if the deletion was successful</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="src.database.DatabaseManager.user_count">
+<span class="sig-name descname"><span class="pre">user_count</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#src.database.DatabaseManager.user_count" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
 
 </dd></dl>
 
@@ -1224,15 +1335,15 @@ Go back to user_options</p>
 <li><a class="reference internal" href="#src.controller.Controller.compose_tweet"><code class="docutils literal notranslate"><span class="pre">Controller.compose_tweet()</span></code></a></li>
 <li><a class="reference internal" href="#src.controller.Controller.db_manager"><code class="docutils literal notranslate"><span class="pre">Controller.db_manager</span></code></a></li>
 <li><a class="reference internal" href="#src.controller.Controller.display_tweet"><code class="docutils literal notranslate"><span class="pre">Controller.display_tweet()</span></code></a></li>
+<li><a class="reference internal" href="#src.controller.Controller.display_user_stats"><code class="docutils literal notranslate"><span class="pre">Controller.display_user_stats()</span></code></a></li>
 <li><a class="reference internal" href="#src.controller.Controller.find_hashtags"><code class="docutils literal notranslate"><span class="pre">Controller.find_hashtags()</span></code></a></li>
 <li><a class="reference internal" href="#src.controller.Controller.follow_user"><code class="docutils literal notranslate"><span class="pre">Controller.follow_user()</span></code></a></li>
 <li><a class="reference internal" href="#src.controller.Controller.get_followees"><code class="docutils literal notranslate"><span class="pre">Controller.get_followees()</span></code></a></li>
 <li><a class="reference internal" href="#src.controller.Controller.get_followees_tweets"><code class="docutils literal notranslate"><span class="pre">Controller.get_followees_tweets()</span></code></a></li>
-<li><a class="reference internal" href="#src.controller.Controller.get_followers"><code class="docutils literal notranslate"><span class="pre">Controller.get_followers()</span></code></a></li>
 <li><a class="reference internal" href="#src.controller.Controller.get_tweet_stats"><code class="docutils literal notranslate"><span class="pre">Controller.get_tweet_stats()</span></code></a></li>
 <li><a class="reference internal" href="#src.controller.Controller.get_user_name"><code class="docutils literal notranslate"><span class="pre">Controller.get_user_name()</span></code></a></li>
-<li><a class="reference internal" href="#src.controller.Controller.get_user_stats"><code class="docutils literal notranslate"><span class="pre">Controller.get_user_stats()</span></code></a></li>
 <li><a class="reference internal" href="#src.controller.Controller.get_user_tweets"><code class="docutils literal notranslate"><span class="pre">Controller.get_user_tweets()</span></code></a></li>
+<li><a class="reference internal" href="#src.controller.Controller.list_followers"><code class="docutils literal notranslate"><span class="pre">Controller.list_followers()</span></code></a></li>
 <li><a class="reference internal" href="#src.controller.Controller.login_check"><code class="docutils literal notranslate"><span class="pre">Controller.login_check()</span></code></a></li>
 <li><a class="reference internal" href="#src.controller.Controller.logout"><code class="docutils literal notranslate"><span class="pre">Controller.logout()</span></code></a></li>
 <li><a class="reference internal" href="#src.controller.Controller.register_user"><code class="docutils literal notranslate"><span class="pre">Controller.register_user()</span></code></a></li>
@@ -1240,6 +1351,7 @@ Go back to user_options</p>
 <li><a class="reference internal" href="#src.controller.Controller.retweet"><code class="docutils literal notranslate"><span class="pre">Controller.retweet()</span></code></a></li>
 <li><a class="reference internal" href="#src.controller.Controller.search_tweets"><code class="docutils literal notranslate"><span class="pre">Controller.search_tweets()</span></code></a></li>
 <li><a class="reference internal" href="#src.controller.Controller.search_users"><code class="docutils literal notranslate"><span class="pre">Controller.search_users()</span></code></a></li>
+<li><a class="reference internal" href="#src.controller.Controller.unfollow_user"><code class="docutils literal notranslate"><span class="pre">Controller.unfollow_user()</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -1251,17 +1363,23 @@ Go back to user_options</p>
 <li><a class="reference internal" href="#src.database.DatabaseManager.cursor"><code class="docutils literal notranslate"><span class="pre">DatabaseManager.cursor</span></code></a></li>
 <li><a class="reference internal" href="#src.database.DatabaseManager.db_file"><code class="docutils literal notranslate"><span class="pre">DatabaseManager.db_file</span></code></a></li>
 <li><a class="reference internal" href="#src.database.DatabaseManager.follow_user"><code class="docutils literal notranslate"><span class="pre">DatabaseManager.follow_user()</span></code></a></li>
+<li><a class="reference internal" href="#src.database.DatabaseManager.get_followees"><code class="docutils literal notranslate"><span class="pre">DatabaseManager.get_followees()</span></code></a></li>
+<li><a class="reference internal" href="#src.database.DatabaseManager.get_followers"><code class="docutils literal notranslate"><span class="pre">DatabaseManager.get_followers()</span></code></a></li>
 <li><a class="reference internal" href="#src.database.DatabaseManager.get_retweets"><code class="docutils literal notranslate"><span class="pre">DatabaseManager.get_retweets()</span></code></a></li>
 <li><a class="reference internal" href="#src.database.DatabaseManager.get_tweet_by_id"><code class="docutils literal notranslate"><span class="pre">DatabaseManager.get_tweet_by_id()</span></code></a></li>
 <li><a class="reference internal" href="#src.database.DatabaseManager.get_tweet_replies"><code class="docutils literal notranslate"><span class="pre">DatabaseManager.get_tweet_replies()</span></code></a></li>
 <li><a class="reference internal" href="#src.database.DatabaseManager.get_tweets"><code class="docutils literal notranslate"><span class="pre">DatabaseManager.get_tweets()</span></code></a></li>
 <li><a class="reference internal" href="#src.database.DatabaseManager.get_tweets_by_hashtag"><code class="docutils literal notranslate"><span class="pre">DatabaseManager.get_tweets_by_hashtag()</span></code></a></li>
-<li><a class="reference internal" href="#src.database.DatabaseManager.get_tweets_by_user"><code class="docutils literal notranslate"><span class="pre">DatabaseManager.get_tweets_by_user()</span></code></a></li>
+<li><a class="reference internal" href="#src.database.DatabaseManager.get_user"><code class="docutils literal notranslate"><span class="pre">DatabaseManager.get_user()</span></code></a></li>
 <li><a class="reference internal" href="#src.database.DatabaseManager.get_user_by_id"><code class="docutils literal notranslate"><span class="pre">DatabaseManager.get_user_by_id()</span></code></a></li>
 <li><a class="reference internal" href="#src.database.DatabaseManager.post_retweet"><code class="docutils literal notranslate"><span class="pre">DatabaseManager.post_retweet()</span></code></a></li>
 <li><a class="reference internal" href="#src.database.DatabaseManager.post_tweet"><code class="docutils literal notranslate"><span class="pre">DatabaseManager.post_tweet()</span></code></a></li>
 <li><a class="reference internal" href="#src.database.DatabaseManager.register_user"><code class="docutils literal notranslate"><span class="pre">DatabaseManager.register_user()</span></code></a></li>
 <li><a class="reference internal" href="#src.database.DatabaseManager.remove_tweet"><code class="docutils literal notranslate"><span class="pre">DatabaseManager.remove_tweet()</span></code></a></li>
+<li><a class="reference internal" href="#src.database.DatabaseManager.remove_user"><code class="docutils literal notranslate"><span class="pre">DatabaseManager.remove_user()</span></code></a></li>
+<li><a class="reference internal" href="#src.database.DatabaseManager.tweet_count"><code class="docutils literal notranslate"><span class="pre">DatabaseManager.tweet_count</span></code></a></li>
+<li><a class="reference internal" href="#src.database.DatabaseManager.unfollow_user"><code class="docutils literal notranslate"><span class="pre">DatabaseManager.unfollow_user()</span></code></a></li>
+<li><a class="reference internal" href="#src.database.DatabaseManager.user_count"><code class="docutils literal notranslate"><span class="pre">DatabaseManager.user_count</span></code></a></li>
 </ul>
 </li>
 </ul>

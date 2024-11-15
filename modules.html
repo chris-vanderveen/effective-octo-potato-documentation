@@ -324,15 +324,15 @@
 <li class="toctree-l4"><a class="reference internal" href="src.html#src.controller.Controller.compose_tweet"><code class="docutils literal notranslate"><span class="pre">Controller.compose_tweet()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="src.html#src.controller.Controller.db_manager"><code class="docutils literal notranslate"><span class="pre">Controller.db_manager</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="src.html#src.controller.Controller.display_tweet"><code class="docutils literal notranslate"><span class="pre">Controller.display_tweet()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="src.html#src.controller.Controller.display_user_stats"><code class="docutils literal notranslate"><span class="pre">Controller.display_user_stats()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="src.html#src.controller.Controller.find_hashtags"><code class="docutils literal notranslate"><span class="pre">Controller.find_hashtags()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="src.html#src.controller.Controller.follow_user"><code class="docutils literal notranslate"><span class="pre">Controller.follow_user()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="src.html#src.controller.Controller.get_followees"><code class="docutils literal notranslate"><span class="pre">Controller.get_followees()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="src.html#src.controller.Controller.get_followees_tweets"><code class="docutils literal notranslate"><span class="pre">Controller.get_followees_tweets()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="src.html#src.controller.Controller.get_followers"><code class="docutils literal notranslate"><span class="pre">Controller.get_followers()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="src.html#src.controller.Controller.get_tweet_stats"><code class="docutils literal notranslate"><span class="pre">Controller.get_tweet_stats()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="src.html#src.controller.Controller.get_user_name"><code class="docutils literal notranslate"><span class="pre">Controller.get_user_name()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="src.html#src.controller.Controller.get_user_stats"><code class="docutils literal notranslate"><span class="pre">Controller.get_user_stats()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="src.html#src.controller.Controller.get_user_tweets"><code class="docutils literal notranslate"><span class="pre">Controller.get_user_tweets()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="src.html#src.controller.Controller.list_followers"><code class="docutils literal notranslate"><span class="pre">Controller.list_followers()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="src.html#src.controller.Controller.login_check"><code class="docutils literal notranslate"><span class="pre">Controller.login_check()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="src.html#src.controller.Controller.logout"><code class="docutils literal notranslate"><span class="pre">Controller.logout()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="src.html#src.controller.Controller.register_user"><code class="docutils literal notranslate"><span class="pre">Controller.register_user()</span></code></a></li>
@@ -340,6 +340,7 @@
 <li class="toctree-l4"><a class="reference internal" href="src.html#src.controller.Controller.retweet"><code class="docutils literal notranslate"><span class="pre">Controller.retweet()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="src.html#src.controller.Controller.search_tweets"><code class="docutils literal notranslate"><span class="pre">Controller.search_tweets()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="src.html#src.controller.Controller.search_users"><code class="docutils literal notranslate"><span class="pre">Controller.search_users()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="src.html#src.controller.Controller.unfollow_user"><code class="docutils literal notranslate"><span class="pre">Controller.unfollow_user()</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -351,17 +352,23 @@
 <li class="toctree-l4"><a class="reference internal" href="src.html#src.database.DatabaseManager.cursor"><code class="docutils literal notranslate"><span class="pre">DatabaseManager.cursor</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="src.html#src.database.DatabaseManager.db_file"><code class="docutils literal notranslate"><span class="pre">DatabaseManager.db_file</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="src.html#src.database.DatabaseManager.follow_user"><code class="docutils literal notranslate"><span class="pre">DatabaseManager.follow_user()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="src.html#src.database.DatabaseManager.get_followees"><code class="docutils literal notranslate"><span class="pre">DatabaseManager.get_followees()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="src.html#src.database.DatabaseManager.get_followers"><code class="docutils literal notranslate"><span class="pre">DatabaseManager.get_followers()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="src.html#src.database.DatabaseManager.get_retweets"><code class="docutils literal notranslate"><span class="pre">DatabaseManager.get_retweets()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="src.html#src.database.DatabaseManager.get_tweet_by_id"><code class="docutils literal notranslate"><span class="pre">DatabaseManager.get_tweet_by_id()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="src.html#src.database.DatabaseManager.get_tweet_replies"><code class="docutils literal notranslate"><span class="pre">DatabaseManager.get_tweet_replies()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="src.html#src.database.DatabaseManager.get_tweets"><code class="docutils literal notranslate"><span class="pre">DatabaseManager.get_tweets()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="src.html#src.database.DatabaseManager.get_tweets_by_hashtag"><code class="docutils literal notranslate"><span class="pre">DatabaseManager.get_tweets_by_hashtag()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="src.html#src.database.DatabaseManager.get_tweets_by_user"><code class="docutils literal notranslate"><span class="pre">DatabaseManager.get_tweets_by_user()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="src.html#src.database.DatabaseManager.get_user"><code class="docutils literal notranslate"><span class="pre">DatabaseManager.get_user()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="src.html#src.database.DatabaseManager.get_user_by_id"><code class="docutils literal notranslate"><span class="pre">DatabaseManager.get_user_by_id()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="src.html#src.database.DatabaseManager.post_retweet"><code class="docutils literal notranslate"><span class="pre">DatabaseManager.post_retweet()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="src.html#src.database.DatabaseManager.post_tweet"><code class="docutils literal notranslate"><span class="pre">DatabaseManager.post_tweet()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="src.html#src.database.DatabaseManager.register_user"><code class="docutils literal notranslate"><span class="pre">DatabaseManager.register_user()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="src.html#src.database.DatabaseManager.remove_tweet"><code class="docutils literal notranslate"><span class="pre">DatabaseManager.remove_tweet()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="src.html#src.database.DatabaseManager.remove_user"><code class="docutils literal notranslate"><span class="pre">DatabaseManager.remove_user()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="src.html#src.database.DatabaseManager.tweet_count"><code class="docutils literal notranslate"><span class="pre">DatabaseManager.tweet_count</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="src.html#src.database.DatabaseManager.unfollow_user"><code class="docutils literal notranslate"><span class="pre">DatabaseManager.unfollow_user()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="src.html#src.database.DatabaseManager.user_count"><code class="docutils literal notranslate"><span class="pre">DatabaseManager.user_count</span></code></a></li>
 </ul>
 </li>
 </ul>

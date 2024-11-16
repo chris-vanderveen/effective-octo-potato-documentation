@@ -247,7 +247,7 @@
           
 <section class="genindex-section">
   <h1 id="index">Index</h1>
-  <div class="genindex-jumpbox"><a href="#_"><strong>_</strong></a> | <a href="#C"><strong>C</strong></a> | <a href="#D"><strong>D</strong></a> | <a href="#E"><strong>E</strong></a> | <a href="#F"><strong>F</strong></a> | <a href="#G"><strong>G</strong></a> | <a href="#L"><strong>L</strong></a> | <a href="#M"><strong>M</strong></a> | <a href="#N"><strong>N</strong></a> | <a href="#P"><strong>P</strong></a> | <a href="#R"><strong>R</strong></a> | <a href="#S"><strong>S</strong></a> | <a href="#T"><strong>T</strong></a> | <a href="#U"><strong>U</strong></a></div>
+  <div class="genindex-jumpbox"><a href="#_"><strong>_</strong></a> | <a href="#C"><strong>C</strong></a> | <a href="#D"><strong>D</strong></a> | <a href="#E"><strong>E</strong></a> | <a href="#F"><strong>F</strong></a> | <a href="#G"><strong>G</strong></a> | <a href="#L"><strong>L</strong></a> | <a href="#M"><strong>M</strong></a> | <a href="#N"><strong>N</strong></a> | <a href="#P"><strong>P</strong></a> | <a href="#R"><strong>R</strong></a> | <a href="#S"><strong>S</strong></a> | <a href="#T"><strong>T</strong></a> | <a href="#U"><strong>U</strong></a> | <a href="#V"><strong>V</strong></a></div>
 </section>
 <section id="_" class="genindex-section">
   <h2>_</h2>
@@ -273,6 +273,8 @@
 </li>
     </ul></td>
     <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="src.html#src.cli.UserInterface.con">con (src.cli.UserInterface attribute)</a>
+</li>
         <li><a href="src.html#src.cli.UserInterface.confirm">confirm (src.cli.UserInterface attribute)</a>
 </li>
         <li><a href="src.html#src.database.DatabaseManager.connection">connection (src.database.DatabaseManager attribute)</a>
@@ -319,9 +321,9 @@
   <h2>F</h2>
   <table style="width: 100%" class="indextable genindextable"><tr>
     <td style="width: 33%; vertical-align: top;"><ul>
-        <li><a href="modules/controller.html#src.controller.Controller.find_hashtags">find_hashtags() (src.controller.Controller method)</a>, <a href="src.html#src.controller.Controller.find_hashtags">[1]</a>
+        <li><a href="src.tests.html#src.tests.test_controller.TestController.filled_db">filled_db() (src.tests.test_controller.TestController method)</a>
 </li>
-        <li><a href="src.html#src.cli.UserMenuOptions.FOLLOW">FOLLOW (src.cli.UserMenuOptions attribute)</a>
+        <li><a href="modules/controller.html#src.controller.Controller.find_hashtags">find_hashtags() (src.controller.Controller method)</a>, <a href="src.html#src.controller.Controller.find_hashtags">[1]</a>
 </li>
         <li><a href="modules/controller.html#src.controller.Controller.follow_user">follow_user() (src.controller.Controller method)</a>, <a href="src.html#src.controller.Controller.follow_user">[1]</a>
 
@@ -355,12 +357,14 @@
 </li>
         <li><a href="src.html#src.database.DatabaseManager.get_retweets">get_retweets() (src.database.DatabaseManager method)</a>
 </li>
-        <li><a href="src.html#src.database.DatabaseManager.get_tweet_by_id">get_tweet_by_id() (src.database.DatabaseManager method)</a>
+        <li><a href="src.html#src.database.DatabaseManager.get_tweet_by_tid">get_tweet_by_tid() (src.database.DatabaseManager method)</a>
 </li>
-        <li><a href="src.html#src.database.DatabaseManager.get_tweet_replies">get_tweet_replies() (src.database.DatabaseManager method)</a>
+        <li><a href="src.html#src.database.DatabaseManager.get_tweet_by_usr">get_tweet_by_usr() (src.database.DatabaseManager method)</a>
 </li>
     </ul></td>
     <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="src.html#src.database.DatabaseManager.get_tweet_replies">get_tweet_replies() (src.database.DatabaseManager method)</a>
+</li>
         <li><a href="modules/controller.html#src.controller.Controller.get_tweet_stats">get_tweet_stats() (src.controller.Controller method)</a>, <a href="src.html#src.controller.Controller.get_tweet_stats">[1]</a>
 </li>
         <li><a href="src.html#src.database.DatabaseManager.get_tweets">get_tweets() (src.database.DatabaseManager method)</a>
@@ -488,18 +492,14 @@
 </li>
         <li><a href="src.html#src.database.DatabaseManager.remove_user">remove_user() (src.database.DatabaseManager method)</a>
 </li>
-        <li><a href="src.html#src.cli.TweetMenuOptions.REPLY">REPLY (src.cli.TweetMenuOptions attribute)</a>
-</li>
     </ul></td>
     <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="src.html#src.cli.TweetMenuOptions.REPLY">REPLY (src.cli.TweetMenuOptions attribute)</a>
+</li>
         <li><a href="modules/controller.html#src.controller.Controller.replyto_tweet">replyto_tweet() (src.controller.Controller method)</a>, <a href="src.html#src.controller.Controller.replyto_tweet">[1]</a>
 </li>
         <li><a href="src.html#src.cli.TweetMenuOptions.RETURN">RETURN (src.cli.TweetMenuOptions attribute)</a>
-
-        <ul>
-          <li><a href="src.html#src.cli.UserMenuOptions.RETURN">(src.cli.UserMenuOptions attribute)</a>
 </li>
-        </ul></li>
         <li><a href="src.html#src.cli.TweetMenuOptions.RETWEET">RETWEET (src.cli.TweetMenuOptions attribute)</a>
 </li>
         <li><a href="modules/controller.html#src.controller.Controller.retweet">retweet() (src.controller.Controller method)</a>, <a href="src.html#src.controller.Controller.retweet">[1]</a>
@@ -584,12 +584,10 @@
           <li><a href="src.tests.html#module-src.tests.test_database">module</a>
 </li>
         </ul></li>
-        <li><a href="src.html#src.cli.TweetMenuOptions.STATS">STATS (src.cli.TweetMenuOptions attribute)</a>
-
-        <ul>
-          <li><a href="src.html#src.cli.UserMenuOptions.STATS">(src.cli.UserMenuOptions attribute)</a>
+        <li><a href="src.html#src.cli.UserInterface.start_menu">start_menu() (src.cli.UserInterface method)</a>
 </li>
-        </ul></li>
+        <li><a href="src.html#src.cli.TweetMenuOptions.STATS">STATS (src.cli.TweetMenuOptions attribute)</a>
+</li>
     </ul></td>
   </tr></table>
 </section>
@@ -604,22 +602,82 @@
 </li>
         <li><a href="src.tests.html#src.tests.test_controller.TestController.test_display_tweet">test_display_tweet() (src.tests.test_controller.TestController method)</a>
 </li>
+        <li><a href="src.tests.html#src.tests.test_controller.TestController.test_display_user_stats">test_display_user_stats() (src.tests.test_controller.TestController method)</a>
+</li>
         <li><a href="src.tests.html#src.tests.test_controller.TestController.test_find_hashtags">test_find_hashtags() (src.tests.test_controller.TestController method)</a>
+</li>
+        <li><a href="src.tests.html#src.tests.test_controller.TestController.test_follow_user">test_follow_user() (src.tests.test_controller.TestController method)</a>
+
+        <ul>
+          <li><a href="src.tests.html#src.tests.test_database.TestDatabaseManager.test_follow_user">(src.tests.test_database.TestDatabaseManager method)</a>
+</li>
+        </ul></li>
+        <li><a href="src.tests.html#src.tests.test_controller.TestController.test_get_followees">test_get_followees() (src.tests.test_controller.TestController method)</a>
+
+        <ul>
+          <li><a href="src.tests.html#src.tests.test_database.TestDatabaseManager.test_get_followees">(src.tests.test_database.TestDatabaseManager method)</a>
+</li>
+        </ul></li>
+        <li><a href="src.tests.html#src.tests.test_controller.TestController.test_get_followees_tweets">test_get_followees_tweets() (src.tests.test_controller.TestController method)</a>
+</li>
+        <li><a href="src.tests.html#src.tests.test_database.TestDatabaseManager.test_get_followers">test_get_followers() (src.tests.test_database.TestDatabaseManager method)</a>
+</li>
+        <li><a href="src.tests.html#src.tests.test_database.TestDatabaseManager.test_get_tweet_by_tid">test_get_tweet_by_tid() (src.tests.test_database.TestDatabaseManager method)</a>
+</li>
+        <li><a href="src.tests.html#src.tests.test_database.TestDatabaseManager.test_get_tweet_by_usr">test_get_tweet_by_usr() (src.tests.test_database.TestDatabaseManager method)</a>
+</li>
+        <li><a href="src.tests.html#src.tests.test_database.TestDatabaseManager.test_get_tweet_replies">test_get_tweet_replies() (src.tests.test_database.TestDatabaseManager method)</a>
 </li>
         <li><a href="src.tests.html#src.tests.test_controller.TestController.test_get_tweet_stats">test_get_tweet_stats() (src.tests.test_controller.TestController method)</a>
 </li>
-        <li><a href="src.tests.html#src.tests.test_database.TestDatabaseManager.test_mock_database">test_mock_database() (src.tests.test_database.TestDatabaseManager method)</a>
+        <li><a href="src.tests.html#src.tests.test_database.TestDatabaseManager.test_get_tweets">test_get_tweets() (src.tests.test_database.TestDatabaseManager method)</a>
 </li>
-        <li><a href="src.tests.html#src.tests.test_database.TestDatabaseManager.test_register_user">test_register_user() (src.tests.test_database.TestDatabaseManager method)</a>
+        <li><a href="src.tests.html#src.tests.test_database.TestDatabaseManager.test_get_tweets_by_hashtag">test_get_tweets_by_hashtag() (src.tests.test_database.TestDatabaseManager method)</a>
 </li>
-        <li><a href="src.tests.html#src.tests.test_database.TestDatabaseManager.test_remove_user">test_remove_user() (src.tests.test_database.TestDatabaseManager method)</a>
+        <li><a href="src.tests.html#src.tests.test_database.TestDatabaseManager.test_get_user">test_get_user() (src.tests.test_database.TestDatabaseManager method)</a>
+</li>
+        <li><a href="src.tests.html#src.tests.test_database.TestDatabaseManager.test_get_user2">test_get_user2() (src.tests.test_database.TestDatabaseManager method)</a>
+</li>
+        <li><a href="src.tests.html#src.tests.test_database.TestDatabaseManager.test_get_user_by_id">test_get_user_by_id() (src.tests.test_database.TestDatabaseManager method)</a>
+</li>
+        <li><a href="src.tests.html#src.tests.test_controller.TestController.test_get_username">test_get_username() (src.tests.test_controller.TestController method)</a>
 </li>
     </ul></td>
     <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="src.tests.html#src.tests.test_controller.TestController.test_list_followers">test_list_followers() (src.tests.test_controller.TestController method)</a>
+</li>
+        <li><a href="src.tests.html#src.tests.test_controller.TestController.test_login_check">test_login_check() (src.tests.test_controller.TestController method)</a>
+</li>
+        <li><a href="src.tests.html#src.tests.test_controller.TestController.test_logout">test_logout() (src.tests.test_controller.TestController method)</a>
+</li>
+        <li><a href="src.tests.html#src.tests.test_database.TestDatabaseManager.test_mock_database">test_mock_database() (src.tests.test_database.TestDatabaseManager method)</a>
+</li>
+        <li><a href="src.tests.html#src.tests.test_database.TestDatabaseManager.test_post_tweet">test_post_tweet() (src.tests.test_database.TestDatabaseManager method)</a>
+</li>
+        <li><a href="src.tests.html#src.tests.test_controller.TestController.test_register_user">test_register_user() (src.tests.test_controller.TestController method)</a>
+
+        <ul>
+          <li><a href="src.tests.html#src.tests.test_database.TestDatabaseManager.test_register_user">(src.tests.test_database.TestDatabaseManager method)</a>
+</li>
+        </ul></li>
+        <li><a href="src.tests.html#src.tests.test_database.TestDatabaseManager.test_remove_tweet">test_remove_tweet() (src.tests.test_database.TestDatabaseManager method)</a>
+</li>
+        <li><a href="src.tests.html#src.tests.test_database.TestDatabaseManager.test_remove_user">test_remove_user() (src.tests.test_database.TestDatabaseManager method)</a>
+</li>
         <li><a href="src.tests.html#src.tests.test_controller.TestController.test_replyto_tweet">test_replyto_tweet() (src.tests.test_controller.TestController method)</a>
+</li>
+        <li><a href="src.tests.html#src.tests.test_database.TestDatabaseManager.test_retweets">test_retweets() (src.tests.test_database.TestDatabaseManager method)</a>
 </li>
         <li><a href="src.tests.html#src.tests.test_controller.TestController.test_search_tweet">test_search_tweet() (src.tests.test_controller.TestController method)</a>
 </li>
+        <li><a href="src.tests.html#src.tests.test_controller.TestController.test_search_users">test_search_users() (src.tests.test_controller.TestController method)</a>
+</li>
+        <li><a href="src.tests.html#src.tests.test_controller.TestController.test_unfollow_user">test_unfollow_user() (src.tests.test_controller.TestController method)</a>
+
+        <ul>
+          <li><a href="src.tests.html#src.tests.test_database.TestDatabaseManager.test_unfollow_user">(src.tests.test_database.TestDatabaseManager method)</a>
+</li>
+        </ul></li>
         <li><a href="src.tests.html#src.tests.test_controller.TestController">TestController (class in src.tests.test_controller)</a>
 </li>
         <li><a href="src.tests.html#src.tests.test_database.TestDatabaseManager">TestDatabaseManager (class in src.tests.test_database)</a>
@@ -631,8 +689,6 @@
         <li><a href="src.html#src.cli.UserInterface.tweet_options">tweet_options() (src.cli.UserInterface method)</a>
 </li>
         <li><a href="src.html#src.cli.TweetMenuOptions">TweetMenuOptions (class in src.cli)</a>
-</li>
-        <li><a href="src.html#src.cli.UserMenuOptions.TWEETS_BY_USER">TWEETS_BY_USER (src.cli.UserMenuOptions attribute)</a>
 </li>
     </ul></td>
   </tr></table>
@@ -650,19 +706,25 @@
         </ul></li>
         <li><a href="src.html#src.database.DatabaseManager.user_count">user_count (src.database.DatabaseManager attribute)</a>
 </li>
-        <li><a href="src.html#src.cli.UserInterface.user_input">user_input (src.cli.UserInterface attribute)</a>
-</li>
     </ul></td>
     <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="src.html#src.cli.UserInterface.user_input">user_input (src.cli.UserInterface attribute)</a>
+</li>
         <li><a href="src.html#src.cli.UserInterface.user_list">user_list (src.cli.UserInterface attribute)</a>
 </li>
         <li><a href="src.html#src.cli.UserInterface.user_options">user_options() (src.cli.UserInterface method)</a>
 </li>
-        <li><a href="src.html#src.cli.UserInterface.user_options_show_tweets">user_options_show_tweets() (src.cli.UserInterface method)</a>
-</li>
         <li><a href="src.html#src.cli.UserInterface">UserInterface (class in src.cli)</a>
 </li>
-        <li><a href="src.html#src.cli.UserMenuOptions">UserMenuOptions (class in src.cli)</a>
+    </ul></td>
+  </tr></table>
+</section>
+
+<section id="V" class="genindex-section">
+  <h2>V</h2>
+  <table style="width: 100%" class="indextable genindextable"><tr>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="src.html#src.database.DatabaseManager.validate_user">validate_user() (src.database.DatabaseManager method)</a>
 </li>
     </ul></td>
   </tr></table>
